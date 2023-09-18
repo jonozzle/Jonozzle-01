@@ -1,0 +1,948 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Work+Sans:wght@300&display=swap');
+@import '~reset-css/reset.css';
+@import './locomotive-scroll.css';
+@import 'utils.scss';
+
+:root {
+    --easing: cubic-bezier(0.5, 0.7, 0.4, 1);
+}
+
+
+
+#word {
+    color: #ffffff;
+    //text-transform: uppercase;
+    text-decoration: none;
+}
+
+#word img {
+    display: none;
+}
+
+#word span {
+    position: relative;
+    display: inline-block;
+}
+
+#word span img {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: black;
+}
+
+//Halftone Effect
+
+#halftone {
+    background: black;
+    position: relative;
+    filter: contrast(25000%);
+    overflow: hidden;
+    transform: translateZ(0);
+    /* force a HW accelerated layer */
+}
+
+#halftone>* {
+    filter: brightness(0.5) blur(0px);
+    transition: filter 1s ease-in-out;
+}
+
+#halftone:hover>* {
+    filter: brightness(0.5) blur(25px);
+}
+
+#halftone::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    right: -100%;
+    bottom: -100%;
+    background-blend-mode: multiply;
+    background:
+        radial-gradient(ellipse 24px 24px at center, white, black),
+        radial-gradient(ellipse 16px 16px at center, white, black),
+        radial-gradient(ellipse 8px 8px at center, black, white);
+    background-size: 8px 8px;
+    background-position: 0 -3px, -2px 0, 2px 0;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    transform: rotate(11.25deg);
+    transition: 1s ease-in-out transform;
+    z-index: 1;
+}
+
+
+//Pride
+#pride {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.banner {
+    position: absolute;
+    z-index: -1;
+    width: 100px;
+    transition: width 0.5s ease;
+}
+
+.banner1 {
+    //background: url(https://membership.aucklandpride.org.nz/resources/Pictures/AucklandPride_PrimaryLogo_Colour_White.png);
+    background: linear-gradient(90deg, rgba(249, 80, 192, 1) 0%, rgba(247, 28, 28, 1) 100%);
+    height: 150px;
+    background-repeat: repeat-x;
+    background-size: contain;
+    background-origin: content-box;
+    padding: 20px 0 20px 0;
+    transform: translate(6vw, 24vw) rotate(-45deg);
+    transform-origin: center left;
+}
+
+.banner2 {
+    //background: url(https://membership.aucklandpride.org.nz/resources/Pictures/AucklandPride_PrimaryLogo_Colour_White.png);
+    background: linear-gradient(90deg, rgba(29, 48, 188, 1) 0%, rgba(136, 214, 248, 1) 100%);
+    height: 150px;
+    background-repeat: repeat-x;
+    background-size: contain;
+    background-origin: content-box;
+    padding: 20px 0 20px 0;
+    transform: translate(110vw, -5vw) rotate(185deg);
+    transform-origin: center left;
+}
+
+.banner3 {
+    //background: url(https://membership.aucklandpride.org.nz/resources/Pictures/AucklandPride_PrimaryLogo_Colour_White.png);
+    background: linear-gradient(90deg, rgba(0, 172, 171, 1) 0%, rgba(154, 219, 67, 1) 100%);
+    height: 150px;
+    background-repeat: repeat-x;
+    background-size: contain;
+    background-origin: content-box;
+    padding: 20px 0 20px 0;
+    transform: translate(60vw, -19vw) rotate(56deg);
+    transform-origin: center left;
+}
+
+.banner4 {
+    //background: url(https://membership.aucklandpride.org.nz/resources/Pictures/AucklandPride_PrimaryLogo_Colour_White.png);
+    background: linear-gradient(90deg, rgba(255, 133, 51, 1) 0%, rgba(255, 223, 67, 1) 100%);
+    height: 150px;
+    background-repeat: repeat-x;
+    background-size: contain;
+    background-origin: content-box;
+    padding: 20px 0 20px 0;
+    transform: translate(-12vw, -14vw) rotate(29deg);
+    transform-origin: center left;
+}
+
+.banner5 {
+    //background: url(https://membership.aucklandpride.org.nz/resources/Pictures/AucklandPride_PrimaryLogo_Colour_White.png);
+    background: linear-gradient(90deg, rgba(119, 43, 144, 1) 0%, rgba(250, 182, 231, 1) 80%);
+    height: 150px;
+    background-repeat: repeat-x;
+    background-size: contain;
+    background-origin: content-box;
+    padding: 20px 0 20px 0;
+    transform: translate(83vw, 19vw) rotate(315deg);
+    transform-origin: center left;
+}
+
+#pride:hover .banner1 {
+    animation-delay: 3s;
+    width: 900px;
+}
+
+#pride:hover .banner2 {
+    width: 1500px;
+}
+
+#pride:hover .banner3 {
+    animation-delay: 3s;
+    width: 1000px;
+}
+
+#pride:hover .banner4 {
+    animation-delay: 3s;
+    width: 1000px;
+}
+
+#pride:hover .banner5 {
+    animation-delay: 3s;
+    width: 1000px;
+}
+
+
+//Mouse Trail
+#mouse-trail {
+    background: color(#000000);
+    overflow: hidden;
+}
+
+#mouse-trail:hover {
+    background: linear-gradient(340deg, rgba(153, 147, 142, 1) 0%, rgba(232, 232, 232, 1) 77%);
+    transition: all 1s ease-in-out;
+}
+
+.pyb-title {
+    z-index: 1000;
+    mix-blend-mode: difference;
+}
+
+
+.mouse-image {
+    width: 25vmin;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+}
+
+.mouse-image[data-status="inactive"] {
+    display: none;
+}
+
+.mouse-image[data-status="active"] {
+    display: block;
+}
+
+
+//Gradient slideshow
+
+#gradient {
+    width: 100%;
+    height: auto;
+    /* Adjust the height as needed */
+    position: relative;
+    overflow: hidden;
+}
+
+.gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 1;
+    z-index: 3;
+    transition: opacity 0.5s;
+}
+
+#gradient:hover .gradient-overlay {
+    opacity: 0;
+    /* Hide the black overlay on hover */
+}
+
+
+.gradient-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    object-position: 0px -2.5vw;
+}
+
+.elevate-title {
+    z-index: 1000;
+    mix-blend-mode: difference;
+}
+
+
+.lander {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    width: 100%;
+    background: white;
+    align-items: center;
+    text-align: center;
+    position: fixed;
+    background-color: rgb(219 217 216);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 50px 0px 50px;
+    font-size: 28px;
+}
+
+
+.nav-about {
+    position: relative;
+}
+
+.jonozzle {
+    display: inline-block;
+
+}
+
+.close {
+    position: absolute;
+    right: 50px;
+}
+
+.black {
+    color: black !important;
+}
+
+
+
+.close::after {
+    display: inline-block;
+    content: "\00d7";
+    font-size: 4em;
+    //color: #fff;
+    right: 50px;
+}
+
+.next-project {
+    padding: 50px 0 0 0;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+body {
+    font-family: sans-serif;
+    font-weight: 300;
+    //color: white;
+}
+
+h2 {
+    padding: 0 0 10px 0;
+    font-size: 3.5em;
+}
+
+h3 {
+    padding: 0 0 10px 0;
+    font-size: 2.1em;
+}
+
+
+
+h6 {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+a {
+    text-decoration: none;
+}
+
+.is-animating {
+    position: fixed;
+    z-index: 2;
+}
+
+.meta-header {
+    display: inline-block;
+    padding-right: 20px;
+}
+
+.page-content {
+    position: relative;
+    padding: 0px 50px 0px 50px;
+    min-height: 100vh;
+}
+
+.about-span {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.about-title {
+    margin: 0 0 30px 0;
+}
+
+
+.about-link {
+    color: black;
+    text-decoration: underline;
+    //transition: all 0.25s ease-in-out;
+}
+
+.about-link:hover {
+    color: rgb(162 142 243);
+}
+
+.lander {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 3000;
+    display: none;
+    justify-content: center;
+}
+
+.lander-text-container {
+    display: inline-block;
+    font-size: 24px;
+    padding: 5px;
+}
+
+#rewired-bg {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+#pride-bg {
+    background-color: rgb(40, 40, 40);
+    color: white;
+}
+
+#elevate-bg {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+#pyb-bg {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+#meaningfulmahi-bg {
+    background-color: #4772b6;
+    color: white;
+}
+
+#about-bg {
+    background-color: rgb(240 255 46);
+    color: black;
+}
+
+#random-bg {
+    background-color: rgb(20 20 21);
+    color: #bfa59d;
+}
+
+.wrapper {
+    //visibility: hidden;
+    z-index: 1;
+}
+
+.transition-active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+}
+
+.wrapper.transition-stick-active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+//Index Header sizes
+
+
+
+.title-fill {
+    width: 100vw;
+    padding: 20px 2.5vw 20px 2.5vw;
+    color: white;
+    z-index: 5;
+    text-transform: uppercase;
+}
+
+.lander-fill {
+    width: 100vw;
+    padding: 20px 10vw 20px 10vw;
+    color: white;
+    z-index: 5;
+}
+
+.project-meta {
+    font-size: 12px;
+    color: white;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 0 25px 0 0;
+    font-weight: 500;
+    position: relative;
+    z-index: 5;
+}
+
+p a {
+    text-decoration: underline;
+    transition: opacity 0.25s ease-in-out;
+}
+
+p a:hover {
+    opacity: 0.5;
+}
+
+//mobile image animation
+
+.mobile-images {
+    width: 70px;
+    /* Adjust the width as needed */
+    height: 80px;
+    /* Adjust the height as needed */
+    display: inline;
+}
+
+#mobile-img {
+    width: 70px;
+    /* Adjust the width as needed */
+    height: 80px;
+    /* Make sure images fill the slideshow container */
+}
+
+
+@media (min-width: 1024px) {
+    .mobile-images {
+        display: none;
+    }
+}
+
+
+
+////////////////////////
+
+.elevate-span {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    font-size: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    font-size: 10vw;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+}
+
+#elevate-2023 {
+    font-size: 10vw;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+}
+
+.text3D {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    display: none;
+}
+
+#meaningful-mahi {
+    width: 100%;
+    position: relative;
+    color: white;
+    background-color: #000000;
+
+}
+
+.meaningful-mahi-image {
+    position: absolute;
+    display: none;
+    object-fit: contain;
+    width: 70px;
+    height: 70px;
+    pointer-events: none;
+}
+
+
+
+main {
+    padding: 0 0 100px 0;
+    display: flex;
+    flex-wrap: wrap;
+
+
+    h1 {
+        //color: #ffffff;
+        //text-transform: uppercase;
+        line-height: 0.95;
+        text-decoration: none;
+        position: relative;
+
+    }
+
+    .column {
+        flex: 50%;
+        max-width: 50%;
+        overflow: hidden;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+
+        position: relative;
+        z-index: 5;
+    }
+
+
+
+    .project,
+    .hero {
+        padding: 2vh 2vw;
+
+        .image {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        img {
+            object-fit: cover;
+            object-position: 50% 50%;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+}
+
+
+////////////////////////
+//Header
+
+header {
+    text-align: left;
+    //margin: 90px 5vw 50px 5vw;
+    overflow: hidden;
+    padding: 50px 0 20px 0;
+
+
+    h1 {
+        //color: #ffffff;
+        font-size: 8em;
+        text-decoration: none;
+        //display: inline-block;
+        //overflow: hidden;
+        // position: relative;
+    }
+
+
+    p {
+        font-size: 1.4em;
+        line-height: 1.3;
+    }
+
+    a {
+        color: white;
+
+    }
+
+}
+
+main .hero {
+    max-width: 650px;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 auto;
+    overflow: hidden;
+
+    .image {
+        padding-bottom: 56.25%;
+        margin-bottom: 4vh;
+        position: relative;
+    }
+
+
+
+}
+
+.content {
+    position: relative;
+    overflow: hidden;
+    padding-left: 40px;
+    padding-bottom: 40px;
+}
+
+.row {
+    width: 100%;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.col {
+    flex: 1 1 8%;
+    margin: 0 0 0.5rem 0;
+    padding: 0.5em 10px;
+    box-sizing: border-box;
+}
+
+/* nested grids */
+.row .row,
+.row.nested {
+    flex: 1 1 auto;
+    margin-top: -0.5em;
+}
+
+/* full width grids */
+.row.wide-fit {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+/* center grids */
+.row.center {
+    justify-content: center;
+}
+
+
+img {
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.center .col {
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+/* columns widths */
+
+.col-span-1 {
+    flex-basis: 8.3333%;
+}
+
+.col-span-2 {
+    flex-basis: 16.6666%;
+}
+
+.col-span-3 {
+    flex-basis: 25%;
+}
+
+.col-span-4 {
+    flex-basis: 33.3333%;
+}
+
+.col-span-5 {
+    flex-basis: 41.6666%;
+}
+
+.col-span-6 {
+    flex-basis: 50%;
+}
+
+.col-span-7 {
+    flex-basis: 58.3333%;
+}
+
+.col-span-8 {
+    flex-basis: 66.6666%;
+}
+
+.col-span-9 {
+    flex-basis: 75%;
+}
+
+.col-span-10 {
+    flex-basis: 83.3333%;
+}
+
+.col-span-11 {
+    flex-basis: 91.6666%;
+}
+
+.col-span-12 {
+    flex-basis: 100%;
+}
+
+@media all and (max-width: 568px) {
+
+    .col-span-1,
+    .col-span-2,
+    .col-span-3,
+    .col-span-4,
+    .col-span-5 {
+        flex-basis: 100%;
+    }
+
+    .col-span-6,
+    .col-span-7,
+    .col-span-8,
+    .col-span-9,
+    .col-span-10,
+    .col-span-11 {
+        flex-basis: 100%;
+    }
+
+    .nested .col {
+        flex-basis: 100%;
+    }
+
+}
+
+
+/* One col */
+@media only screen and (max-width: 768px) {
+    main {
+        padding: 0 0 50px 0;
+    }
+
+    main .column {
+        flex: 100%;
+        max-width: 100%;
+    }
+
+
+}
+
+
+@media screen and (max-width: 1024px) {
+
+    main {
+        padding: 0 20px 0 0px;
+        min-height: 100vh;
+        overflow: hidden;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 20px 0px 20px;
+        font-size: 18px;
+    }
+
+    header {
+        text-align: left;
+        overflow: hidden;
+        padding: 20px 0 20px 0;
+
+        h1 {
+            width: 75%;
+            font-size: 4em;
+        }
+
+
+        h2 {
+            padding: 0 0 10px 0;
+            font-size: 2em;
+            line-height: 1.2;
+        }
+
+        h3 {
+            padding: 0 0 10px 0;
+            font-size: 1.35em;
+            line-height: 1.15;
+        }
+
+        p {
+            font-size: 1.1em;
+        }
+
+    }
+
+    .meta-header {
+        display: block;
+    }
+
+    .close {
+        right: 25px;
+    }
+
+    .close::after {
+        font-size: 2.5em;
+    }
+
+    .title-fill {
+        width: 100%;
+        padding: 20px 0 100px 0;
+        font-size: 120px;
+        word-wrap: break-word;
+        font-weight: 600;
+    }
+
+    .project-meta {
+        font-size: 10px;
+        display: block;
+        padding: 0 10px 0 0;
+    }
+
+    .project-title {
+        display: inline;
+    }
+
+
+
+    //project specific
+
+    .page-content {
+        padding: 0px 0px 0px 0px;
+    }
+
+
+
+    .about-title {
+        padding: 0 0 10px 0;
+    }
+
+    .about-span {
+        margin: 30px 0 0 0;
+        display: block;
+    }
+
+    .banner {
+        display: none;
+    }
+
+    #halftone::after {
+        display: none;
+    }
+
+    #halftone {
+        background: black;
+        position: relative;
+        filter: contrast(100%);
+    }
+
+    #halftone>* {
+        filter: brightness(1) blur(0px);
+        transition: filter 1s ease-in-out;
+    }
+
+    .title-fill a {
+        display: flex;
+        flex-wrap: wrap;
+        display: block;
+    }
+
+
+    .title-fill #halftone,
+    #meaningful-mahi {
+        display: inline;
+    }
+
+    .banner {
+        display: none;
+    }
+
+    #pride {
+        word-break: break-all;
+    }
+
+}
