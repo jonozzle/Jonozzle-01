@@ -11,7 +11,7 @@ npm run dev
 
 Create a production ready build:
 
-<a href="./barbajs-css-transition">Barba.js with CSS Transitions</a>
+<a href="src/index.html">Barba.js with CSS Transitions</a>
 ```
 npm run build
 ```
