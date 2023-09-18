@@ -3,15 +3,15 @@ function MouseTrail() {
 
     // Array of image URLs
     const imageUrls = [
-        "project images/Protect Your Breath/mousetrail/01.png",
-        "project images/Protect Your Breath/mousetrail/02.png",
-        "project images/Protect Your Breath/mousetrail/03.png",
-        "project images/Protect Your Breath/mousetrail/04.png",
-        "project images/Protect Your Breath/mousetrail/05.png",
-        "project images/Protect Your Breath/mousetrail/06.png",
-        "project images/Protect Your Breath/mousetrail/07.png",
-        "project images/Protect Your Breath/mousetrail/08.jpg",
-        "project images/Protect Your Breath/mousetrail/09.png",
+        "project images/Protect Your Breath/mousetrail/PYB_mousetrail_01.png",
+        "project images/Protect Your Breath/mousetrail/PYB_mousetrail_02.png",
+        "project images/Protect Your Breath/mousetrail/PYB_mousetrail_03.png",
+        "project images/Protect Your Breath/mousetrail/PYB_mousetrail_04.png",
+        "project images/Protect Your Breath/mousetrail/PYB_mousetrail_05.png",
+        "project images/Protect Your Breath/mousetrail/PYB_mousetrail_06.png",
+        "project images/Protect Your Breath/mousetrail/PYB_mousetrail_07.png",
+        "project images/Protect Your Breath/mousetrail/PYB_mousetrail_08.jpg",
+        "project images/Protect Your Breath/mousetrail/PYB_mousetrail_09.png",
         // Add more image URLs here
     ];
 

@@ -27,7 +27,16 @@ module.exports = (env, argv) => ({
         }, {
           from: 'src/images/*',
           to: 'images/[name].[ext]',
-        }],
+        },
+        {
+          from: 'src/Letter images/**/*',
+          to: 'Letter images/[name].[ext]',
+        },
+        {
+          from: 'src/project images/**/*',
+          to: 'project images/[name].[ext]',
+        },
+        ],
       }),
     ],
   },
