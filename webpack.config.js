@@ -23,19 +23,18 @@ module.exports = (env, argv) => ({
       new CopyPlugin({
         patterns: [{
           from: 'src/*.html',
-          to: '[name][ext]',
+          to: '[name].[ext]',
+        }, {
+          from: 'src/images/*',
+          to: 'images/[name].[ext]',
         },
         {
-          from: 'src/project images',
-          to: 'project images',
+          from: 'src/Letter images/**/*',
+          to: 'Letter images/[name].[ext]',
         },
         {
-          from: 'src/images',
-          to: 'images',
-        },
-        {
-          from: 'src/Letter images',
-          to: 'Letter images',
+          from: 'src/project images/**/*',
+          to: 'project images/[name].[ext]',
         },
         ],
       }),
