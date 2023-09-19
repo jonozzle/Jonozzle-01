@@ -2,7 +2,7 @@ import barba from '@barba/core';
 import barbaPrefetch from '@barba/prefetch';
 import fitty from 'fitty';
 
-import { slideup, slideup_end, slidedown, stick, elevatetext, lettershuffle, imagebounce, MouseTrail, homeAnimation, fadeout, landerAnimation, projectAnimation, mobileimages, jonozzle, landerword } from './animations';
+import { slideup, slideup_end, slidedown, stick, lettershuffle, imagebounce, MouseTrail, homeAnimation, fadeout, landerAnimation, projectAnimation, mobileimages, jonozzle, landerword } from './animations';
 
 barba.use(barbaPrefetch);
 
