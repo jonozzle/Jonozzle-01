@@ -44,7 +44,6 @@
     "gsap": "^3.11.3",
     "locomotive-scroll": "^4.1.4",
     "reset-css": "^5.0.1",
-    "three": "file:node_modules/three"
   },
   "repository": "https://github.com/jonozzle/Jonozzle-01.git",
   "author": "jonozzle <jonathan.cole.1994@gmail.com>"
