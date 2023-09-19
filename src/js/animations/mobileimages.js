@@ -2,56 +2,84 @@
 function mobileimages() {
 
 
-  // Define image paths for the first slideshow
-  const imagePaths1 = [
-    "project images/ReWired/06.jpg",
-    "project images/ReWired/03.jpg",
-    "project images/ReWired/02.jpg",
+  const slideshowData = [
+    {
+      slideshowID: "rewired-mobile",
+      imagePaths: [
+        "project images/ReWired/rewired_06.jpg",
+        "project images/ReWired/rewired_03.jpg",
+        "project images/ReWired/rewired_02.jpg",
+      ]
+    },
+    {
+      slideshowID: "aucklandpride-mobile",
+      imagePaths: [
+        "project images/ReWired/rewired_06.jpg",
+        "project images/ReWired/rewired_03.jpg",
+        "project images/ReWired/rewired_02.jpg",
+      ]
+    },
+    {
+      slideshowID: "meaningful-mahi-mobile",
+      imagePaths: [
+        "project images/Meaningful Mahi/MeaningfulMahi_06.jpg",
+        "project images/Meaningful Mahi/MeaningfulMahi_07.jpg",
+        "project images/Meaningful Mahi/MeaningfulMahi_05B.png",
+      ]
+    },
+    {
+      slideshowID: "elevate-mobile",
+      imagePaths: [
+        "project images/Elevate/Elevate_01.jpg",
+        "project images/Elevate/Elevate_05.jpg",
+        "project images/Elevate/Elevate_06.jpg",
+      ]
+    },
+    {
+      slideshowID: "pyb-mobile",
+      imagePaths: [
+        "project images/Protect Your Breath/PYB_03B.jpg",
+        "project images/Protect Your Breath/PYB_07.png",
+        "project images/Protect Your Breath/PYB_09.png",
+      ]
+    },
+    {
+      slideshowID: "random-mobile",
+      imagePaths: [
+        "project images/random/random_03.jpg",
+        "project images/random/random_06.jpg",
+        "project images/random/random_07.jpg",
+      ]
+    },
   ];
 
-  // Define image paths for the second slideshow
-  const imagePaths2 = [
-    "https://via.placeholder.com/300x200?text=Image+4",
-    "https://via.placeholder.com/300x200?text=Image+5",
-    "https://via.placeholder.com/300x200?text=Image+6"
-  ];
 
-  // Slideshow 1 logic
-  const slideshow1 = document.querySelector("#rewired-mobile");
-  let currentImageIndex1 = 0;
 
-  function updateSlideshow1() {
-    slideshow1.innerHTML = "";
+  function updateSlideshow(slideshowData) {
+    slideshowData.forEach(data => {
+      const slideshow = document.getElementById(data.slideshowID);
+      let currentImageIndex = 0;
 
-    const img = document.createElement("img");
-    img.src = imagePaths1[currentImageIndex1];
-    img.id = "mobile-img";
-    slideshow1.appendChild(img);
+      if (slideshow) {
+        slideshow.innerHTML = "";
 
-    currentImageIndex1 = (currentImageIndex1 + 1) % imagePaths1.length;
+        const img = document.createElement("img");
+        img.src = data.imagePaths[currentImageIndex];
+        img.id = "mobile-img";
+        slideshow.appendChild(img);
+
+        currentImageIndex = (currentImageIndex + 1) % data.imagePaths.length;
+
+        setInterval(() => {
+          img.src = data.imagePaths[currentImageIndex];
+          currentImageIndex = (currentImageIndex + 1) % data.imagePaths.length;
+        }, 600);
+      }
+    });
   }
 
-  setInterval(updateSlideshow1, 600);
-  updateSlideshow1();
-
-
-  // Slideshow 2 logic
-  const slideshow2 = document.querySelector("#aucklandpride-mobile");
-  let currentImageIndex2 = 0;
-
-  function updateSlideshow2() {
-    slideshow2.innerHTML = "";
-
-    const img = document.createElement("img");
-    img.src = imagePaths2[currentImageIndex2];
-    img.id = "mobile-img";
-    slideshow2.appendChild(img);
-
-    currentImageIndex2 = (currentImageIndex2 + 1) % imagePaths2.length;
-  }
-
-  setInterval(updateSlideshow2, 600);
-  updateSlideshow2();
+  // Initial update
+  updateSlideshow(slideshowData);
 
 
 

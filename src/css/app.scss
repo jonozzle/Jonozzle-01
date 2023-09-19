@@ -505,6 +505,7 @@ p a:hover {
     /* Adjust the width as needed */
     height: 80px;
     /* Make sure images fill the slideshow container */
+    object-fit: cover;
 }
 
 
@@ -816,7 +817,7 @@ img {
 @media screen and (max-width: 1024px) {
 
     main {
-        padding: 0 20px 0 0px;
+        //padding: 0 20px 0 0px;
         min-height: 100vh;
         overflow: hidden;
     }
@@ -831,7 +832,7 @@ img {
     header {
         text-align: left;
         overflow: hidden;
-        padding: 20px 0 20px 0;
+        padding: 20px 0px 20px 0px;
 
         h1 {
             width: 75%;
@@ -871,8 +872,8 @@ img {
 
     .title-fill {
         width: 100%;
-        padding: 20px 0 100px 0;
-        font-size: 120px;
+        padding: 20px 0 120px 0;
+        font-size: 90px;
         word-wrap: break-word;
         font-weight: 600;
     }
@@ -943,6 +944,10 @@ img {
 
     #pride {
         word-break: break-all;
+    }
+
+    .next-project {
+        padding: 0 1em 0 1em;
     }
 
 }
