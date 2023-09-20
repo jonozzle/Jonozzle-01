@@ -123,7 +123,7 @@
     background-size: contain;
     background-origin: content-box;
     padding: 20px 0 20px 0;
-    transform: translate(60vw, -19vw) rotate(56deg);
+    transform: translate(40vw, -35vw) rotate(56deg);
     transform-origin: center left;
 }
 
@@ -268,7 +268,7 @@
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 0px 50px 0px 50px;
+    //padding: 0px 50px 0px 50px;
     font-size: 28px;
 }
 
@@ -351,7 +351,7 @@ a {
 
 .page-content {
     position: relative;
-    padding: 0px 50px 0px 50px;
+    // padding: 0px 50px 0px 50px;
     min-height: 100vh;
 }
 
@@ -388,7 +388,7 @@ a {
 
 .lander-text-container {
     display: inline-block;
-    font-size: 24px;
+    //font-size: 24px;
     padding: 5px;
 }
 
@@ -509,7 +509,7 @@ p a:hover {
 }
 
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
     .mobile-images {
         display: none;
     }
@@ -564,7 +564,9 @@ p a:hover {
     pointer-events: none;
 }
 
-
+.project-main {
+    padding: 0 50px 100px 50px;
+}
 
 main {
     padding: 0 0 100px 0;
@@ -629,8 +631,18 @@ header {
     text-align: left;
     //margin: 90px 5vw 50px 5vw;
     overflow: hidden;
-    padding: 50px 0 20px 0;
+    padding: 50px 50px 20px 50px;
 
+    .header-project {
+        width: 80%;
+    }
+
+    .header-about {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 
     h1 {
         //color: #ffffff;
@@ -809,15 +821,21 @@ img {
         flex: 100%;
         max-width: 100%;
     }
-
-
 }
 
 
+
+
+
+
+
+
+
+//tablet
 @media screen and (max-width: 1024px) {
 
     main {
-        //padding: 0 20px 0 0px;
+        padding: 0 20px 0 20px;
         min-height: 100vh;
         overflow: hidden;
     }
@@ -825,41 +843,46 @@ img {
     nav {
         display: flex;
         justify-content: space-between;
-        padding: 0px 20px 0px 20px;
+        //padding: 0px 20px 0px 20px;
         font-size: 18px;
+    }
+
+    .col {
+        //margin: 0px;
+        //padding: 0 10px;
     }
 
     header {
         text-align: left;
         overflow: hidden;
-        padding: 20px 0px 20px 0px;
+        padding: 20px 20px 0px 20px;
 
         h1 {
             width: 75%;
-            font-size: 4em;
+            font-size: 6em;
         }
 
 
         h2 {
             padding: 0 0 10px 0;
-            font-size: 2em;
+            font-size: 2.8em;
             line-height: 1.2;
         }
 
         h3 {
             padding: 0 0 10px 0;
-            font-size: 1.35em;
+            font-size: 1.75em;
             line-height: 1.15;
         }
 
         p {
-            font-size: 1.1em;
+            font-size: 1.35em;
         }
 
     }
 
     .meta-header {
-        display: block;
+        //display: block;
     }
 
     .close {
@@ -872,8 +895,8 @@ img {
 
     .title-fill {
         width: 100%;
-        padding: 20px 0 120px 0;
-        font-size: 90px;
+        padding: 20px 0 20px 0;
+        font-size: 70px;
         word-wrap: break-word;
         font-weight: 600;
     }
@@ -900,12 +923,10 @@ img {
 
     .about-title {
         padding: 0 0 10px 0;
+        width: 100%;
     }
 
-    .about-span {
-        margin: 30px 0 0 0;
-        display: block;
-    }
+
 
     .banner {
         display: none;
@@ -947,7 +968,83 @@ img {
     }
 
     .next-project {
-        padding: 0 1em 0 1em;
+        padding: 150px 0 50px 0;
     }
+
+    .banner {
+        display: none;
+    }
+
+    .project-main {
+        padding: 0 20px 100px 20px;
+    }
+
+    .header-about {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+}
+
+
+
+//mobile
+
+@media screen and (max-width: 568px) {
+
+
+    header {
+        text-align: left;
+        overflow: hidden;
+        padding: 20px 20px 0px 20px;
+
+        h1 {
+            width: 75%;
+            font-size: 4em;
+        }
+
+
+        h2 {
+            padding: 0 0 10px 0;
+            font-size: 2em;
+            line-height: 1.2;
+        }
+
+        h3 {
+            padding: 0 0 0 0;
+            font-size: 1.55em;
+            line-height: 1.25;
+        }
+
+        p {
+            font-size: 1.1em;
+        }
+
+    }
+
+    .col {
+        margin: 0px;
+        padding: 1em 0;
+    }
+
+    .about-span {
+        margin: 30px 0 0 0;
+        display: block;
+    }
+
+    .title-fill {
+        width: 100%;
+        padding: 50px 0 50px 0;
+        font-size: 90px;
+        word-wrap: break-word;
+        font-weight: 600;
+    }
+
+    .next-project {
+        padding: 50px 0 50px 0;
+    }
+
 
 }
